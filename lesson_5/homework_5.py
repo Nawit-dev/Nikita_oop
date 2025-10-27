@@ -20,7 +20,7 @@ class LengthValidator:
         if self.min_len < len(str_len) <= self.max_len:
             return f'Длинна слова в {len(str_len)} символов находится между диапазоном {self.min_len} и {self.max_len}'
         else:
-            return ValueError('Условие не выполнено')
+            raise ValueError('Условие не выполнено')
 
 validator = LengthValidator(3, 10)
 print(validator("python"))  # True
@@ -99,7 +99,7 @@ class Book:
         return f'{self.author} - {self.title}'
 
     def __repr__(self):
-        return f'<Book "{self.title}" by {self.author}>'
+        return f"<Book '{self.title}' by {self.author}>"
 
 
 book = Book("1984", "Джордж Оруэлл")
@@ -120,7 +120,7 @@ class TestUser:
         self.email = email
 
     def __repr__(self):
-        return f'<TestUser  id={self.id} name="{self.name}" email="{self.email}">'
+        return f"<TestUser id={self.id} name='{self.name}' email='{self.email}'>"
 
 user = TestUser(12, "Daniil", "daniil@example.com")
-print(u
+print(user)
